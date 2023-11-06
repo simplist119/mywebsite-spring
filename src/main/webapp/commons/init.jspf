@@ -1,0 +1,15 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+    <%
+			String actionstr = "";
+			String str = "logout";
+			
+			HttpSession session1 = request.getSession();
+			if(session1.getAttribute("id") != null){
+				str = "logout";
+				actionstr = "LogoutController"; 
+			}
+			else{
+				str = "login";
+				actionstr = "/loginController";
+			}
+	%>
