@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mywebsitespring.dao.userMapper">
+
+    <select id="select" parameterType="String" resultType="user">
+        select * from user where id = #{id}
+    </select>
+
+    <select id="selectAll" resultType="user">
+        select * from user
+    </select>
+
+    <insert id="insert" parameterType="User">
+        insert into user (id, pwd, name, email, birth, reg_date) values (#{id}, #{pwd}, #{name}, #{email}, #{birth}, #{reg_date})
+    </insert>
+
+    <update id="update" parameterType="User">
+        update user set pwd=#{pwd}, name=#{name}, email=#{email}, birth=#{birth}, reg_date=#{reg_date} where id=#{id}
+    </update>
+
+    <delete id="delete" parameterType="String">
+        delete from user where id = #{id}
+    </delete>
+
+    <delete id="deleteAll">
+        delete from user
+    </delete>
+
+
+</mapper>

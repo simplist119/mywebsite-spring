@@ -22,7 +22,7 @@ public class UserDaoImplTest {
 
     @Test
     public void selectUser() {
-        String id = "aaaa2";
+        String id = "aaaaasdasd2";
         User user = null;
         user = userDao.selectUser(id);
         System.out.println("user : " + user);
