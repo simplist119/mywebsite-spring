@@ -1,0 +1,13 @@
+레이아웃 빨리 배우기
+
+studyBoardMapper.xml의 selectPage에서 rn도 같이 반환해주고 싶은데 방법은? resulttype이 StudyBoardDto로 한정되어있는데?
+게시글 insert페이지 엔터없애기 줄바꿈하기
+viewcount 오르는거 구현하기
+mysql date type varchar에서 datetime으로 바꾸기
+수정컨트롤러 탈때 자격 확인하기
+수정일추가하기 - mysql의 datetime 형식과 맞는 자바형식 찾기
+수정기능 실행후 mysql 자동커밋되는지 조금 기다렸다가 확인후 안되면 원장님한테 질문
+a태그 각각에 id를 지정해주던가, 아니면 a태그를 같은 클래스로 묶어서 그걸 foreach로 돌릴수 있는지? 각각${}값 검사해서 -이면 style non display처리
+----------------------
+-toURL 구현하기
+-페이징

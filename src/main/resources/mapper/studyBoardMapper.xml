@@ -2,30 +2,48 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
-<mapper namespace="com.example.mywebsitespring.dao.userMapper">
+<!--TODO : 경로 이해안감-->
+<mapper namespace="com.example.mywebsitespring.dao.studyBoardMapper">
 
-    <select id="select" parameterType="String" resultType="user">
-        select * from user where id = #{id}
+    <select id="countStudyBoard" resultType="int">
+        select count(*) from studyboard
     </select>
 
-    <select id="selectAll" resultType="user">
-        select * from user
+    <select id="select" parameterType="int" resultType="StudyBoardDto">
+        select * from studyboard where bno = #{bno}
     </select>
 
-    <insert id="insert" parameterType="User">
-        insert into user (id, pwd, name, email, birth, reg_date) values (#{id}, #{pwd}, #{name}, #{email}, #{birth}, #{reg_date})
+<!--    <select id="selectPage" parameterType="int" resultType="StudyBoardDto">-->
+<!--        select a.* from (select @rownum := @rownum + 1 rn, s.* from studyboard s, (select @rownum :=0) a order by bno desc) a where rn<=20 and rn>=20-9-->
+<!--    </select>-->
+
+    <select id="selectPage" parameterType="int" resultType="StudyBoardDto">
+    <![CDATA[
+        select a.* from (select @rownum := @rownum + 1 rn, s.* from studyboard s, (select @rownum :=0) a order by bno desc) a where rn<=#{number} and rn>=#{number}-9
+        ]]>
+    </select>
+
+    <select id="selectAll" resultType="StudyBoardDto">
+        select * from studyboard
+    </select>
+
+    <insert id="insert" parameterType="StudyBoardDto">
+        insert into studyboard (title, content, writer)
+        values (#{title}, #{content}, #{writer})
     </insert>
 
-    <update id="update" parameterType="User">
-        update user set pwd=#{pwd}, name=#{name}, email=#{email}, birth=#{birth}, reg_date=#{reg_date} where id=#{id}
+    <update id="update" parameterType="StudyBoardDto">
+        update studyboard
+        set title=#{title}, content=#{content}
+        where bno=#{bno}
     </update>
 
-    <delete id="delete" parameterType="String">
-        delete from user where id = #{id}
+    <delete id="delete" parameterType="int">
+        delete from studyboard where bno = #{bno}
     </delete>
 
     <delete id="deleteAll">
-        delete from user
+        delete from studyboard
     </delete>
 
 

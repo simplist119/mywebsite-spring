@@ -33,33 +33,36 @@
 <body>
 <%@ include file="/WEB-INF/views/commons/header.jspf" %>
 <br>This is studyBoard!
-<table>
-    <thead>
-    <tr>
-        <td colspan="4">제목 : ${board.title}</td>
-    </tr>
-    <tr>
-        <td>번호 : ${board.bno}</td>
-        <td>작성자 : ${board.writer}</td>
-        <td>조회수 : ${board.view_cnt}</td>
-        <td>작성일 : ${board.reg_date}</td>
-    </tr>
-    </thead>
-    <tbody>
-    <tr>
-        <td colspan="4">${board.content}</td>
+<form action="/studyboard/update" method="post">
+    <input type="hidden" name="bno" value="${board.bno}">
+    <table>
+        <thead>
+        <tr>
+            <td colspan="4"><input type="text" placeholder="제목" name="title" value=${board.title}> </td>
+        </tr>
+        <tr>
+            <td>번호 : ${board.bno}</td>
+            <td>작성자 : ${board.writer}</td>
+            <td>조회수 : ${board.view_cnt}</td>
+            <td>작성일 : ${board.reg_date}</td>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td colspan="4"><input type="text" placeholder="내용" name="content" value=${board.content}></td>
 
-    </tr>
-    </tbody>
-    <tfoot>
-    <tr>
-        <td colspan="4">${board.comment_cnt}</td>
-    </tr>
-    </tfoot>
-</table><br>
-<button><a href="/studyboard/delete?bno=${board.bno}">삭제</a></button>
-<button><a href="/studyboard/update?bno=${board.bno}">수정</a></button>
-<a href="/studyboard/delete?bno=${board.bno}"><button>삭제</button></a>
+        </tr>
+        </tbody>
+        <tfoot>
+        <tr>
+            <td colspan="4">${board.comment_cnt}</td>
+        </tr>
+        </tfoot>
+    </table><br>
+    <input type="submit" value="제출">
+    <a href="/"><button>돌아가기</button>
+    </a>
+</form>
 <%@ include file="/WEB-INF/views/commons/footer.jspf" %>
 </body>
 </html>

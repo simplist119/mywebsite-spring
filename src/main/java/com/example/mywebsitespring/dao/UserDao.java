@@ -1,18 +1,18 @@
 package com.example.mywebsitespring.dao;
 
-import com.example.mywebsitespring.domain.User;
+import com.example.mywebsitespring.domain.UserDto;
 
 import java.util.List;
 
 public interface UserDao {
 
-    User selectUser(String id);
+    UserDto selectUser(String id);
 
-    List<User> selectAll();
+    List<UserDto> selectAll();
 
-    int updateUser(User user);
+    int updateUser(UserDto userDto);
 
-    int insertUser(User user);
+    int insertUser(UserDto userDto);
 
     int deleteUser(String id);
 

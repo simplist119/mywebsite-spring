@@ -6,15 +6,19 @@ import java.util.List;
 
 public interface StudyBoardDao {
 
-    StudyBoardDto selectStudyBoard(String bno);
+    int countStudyBoard();
 
-    List<StudyBoardDto> selectStudyBoards();
+    StudyBoardDto selectStudyBoard(int bno);
+
+    List<StudyBoardDto> selectStudyBoardPage(int number);
+
+    List<StudyBoardDto> selectStudyBoardAll();
 
     int insertStudyBoard(StudyBoardDto studyBoardDto);
 
     int updateStudyBoard(StudyBoardDto studyBoardDto);
 
-    int deleteStudyBoard(String bno);
+    int deleteStudyBoard(int bno);
 
     int deleteStudyBoardAll();
 }

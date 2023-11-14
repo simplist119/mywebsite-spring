@@ -15,7 +15,17 @@ public class StudyBoardDto {
     public StudyBoardDto() {
     }
 
-    public StudyBoardDto(Integer bno, String title, String content, String writer, int view_cnt, int comment_cnt, Date reg_date, Date update_date) {
+    public StudyBoardDto(String title, String content, String writer, int view_cnt, int comment_cnt, Date reg_date) {
+//        super();
+        this.title = title;
+        this.content = content;
+        this.writer = writer;
+        this.view_cnt = view_cnt;
+        this.comment_cnt = comment_cnt;
+        this.reg_date = reg_date;
+    }
+
+    public StudyBoardDto(Integer bno, String title, String content, String writer, int view_cnt, int comment_cnt, Date reg_date) {
         this.bno = bno;
         this.title = title;
         this.content = content;
@@ -23,7 +33,6 @@ public class StudyBoardDto {
         this.view_cnt = view_cnt;
         this.comment_cnt = comment_cnt;
         this.reg_date = reg_date;
-        this.update_date = update_date;
     }
 
     @Override
@@ -36,7 +45,6 @@ public class StudyBoardDto {
                 ", view_cnt=" + view_cnt +
                 ", comment_cnt=" + comment_cnt +
                 ", reg_date=" + reg_date +
-                ", update_date=" + update_date +
                 '}';
     }
 
@@ -95,15 +103,4 @@ public class StudyBoardDto {
     public void setReg_date(Date reg_date) {
         this.reg_date = reg_date;
     }
-
-    public Date getUpdate_date() {
-        return update_date;
-    }
-
-    public void setUpdate_date(Date update_date) {
-        this.update_date = update_date;
-    }
-
-    private Date update_date;
-
 }

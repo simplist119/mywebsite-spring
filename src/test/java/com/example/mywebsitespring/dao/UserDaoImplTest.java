@@ -1,6 +1,6 @@
 package com.example.mywebsitespring.dao;
 
-import com.example.mywebsitespring.domain.User;
+import com.example.mywebsitespring.domain.UserDto;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,16 +22,16 @@ public class UserDaoImplTest {
 
     @Test
     public void selectUser() {
-        String id = "aaaaasdasd2";
-        User user = null;
-        user = userDao.selectUser(id);
-        System.out.println("user : " + user);
-        assertTrue(user != null);
+        String id = "a1";
+        UserDto userDto = null;
+        userDto = userDao.selectUser(id);
+        System.out.println("user : " + userDto);
+        assertTrue(userDto != null);
     }
 
     @Test
     public void selectAll() {
-        List<User> list = null;
+        List<UserDto> list = null;
         list = userDao.selectAll();
         System.out.println("selectAll : " + list);
         assertTrue(list != null);
@@ -39,20 +39,21 @@ public class UserDaoImplTest {
 
     @Test
     public void updateUser() {
-        User user = new User("aaaa", "1234", "kong", "abc@abc.com", new Date(), new Date());
+        UserDto user = new UserDto("aaaa", "1234", "kong", "abc@abc.com", new Date(), new Date());
         int result = userDao.updateUser(user);
 
         System.out.println("result : " + result);
         assertTrue(result >= 1);
     }
 
+//    TODO : 나는 StudyboardDaoImpltest를 하는데 왜 여기서 오류가 뜰까?ㅡㅡ
     @Test
     public void insertUser() {
         Calendar cal = Calendar.getInstance();
         cal.clear();
         cal.set(1999, 12, 12);
         int result = 0;
-        User user1 = new User("aaaa3", "1234", "jack", "abc@abc.com", new Date(cal.getTimeInMillis()), new Date());
+        UserDto user1 = new UserDto("aaaa13", "1234", "jack", "abc@abc.com", new Date(cal.getTimeInMillis()), new Date());
         result = userDao.insertUser(user1);
         System.out.println("result : " + result);
         assertTrue(result >= 1);
@@ -60,7 +61,7 @@ public class UserDaoImplTest {
 
     @Test
     public void deleteUser() {
-        String id = "aaaa";
+        String id = "a1";
         int result = 0;
         result = userDao.deleteUser(id);
         System.out.println("result : " + result);

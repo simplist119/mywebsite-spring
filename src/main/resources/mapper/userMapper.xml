@@ -4,19 +4,19 @@
 
 <mapper namespace="com.example.mywebsitespring.dao.userMapper">
 
-    <select id="select" parameterType="String" resultType="user">
+    <select id="select" parameterType="String" resultType="UserDto">
         select * from user where id = #{id}
     </select>
 
-    <select id="selectAll" resultType="user">
+    <select id="selectAll" resultType="UserDto">
         select * from user
     </select>
 
-    <insert id="insert" parameterType="User">
+    <insert id="insert" parameterType="UserDto">
         insert into user (id, pwd, name, email, birth, reg_date) values (#{id}, #{pwd}, #{name}, #{email}, #{birth}, #{reg_date})
     </insert>
 
-    <update id="update" parameterType="User">
+    <update id="update" parameterType="UserDto">
         update user set pwd=#{pwd}, name=#{name}, email=#{email}, birth=#{birth}, reg_date=#{reg_date} where id=#{id}
     </update>
 
@@ -27,6 +27,5 @@
     <delete id="deleteAll">
         delete from user
     </delete>
-
 
 </mapper>

@@ -8,11 +8,11 @@
   <title>Index</title>
 </head>
 <body>
-<%@ include file="/commons/header.jspf" %>
+<%@ include file="/WEB-INF/views/commons/header.jspf" %>
 <br>This is etcBoard!
 <br>This is etcBoard!!
 <br>This is etcBoard!!!
 <br>
-<%@ include file="/commons/footer.jspf" %>
+<%@ include file="/WEB-INF/views/commons/footer.jspf" %>
 </body>
 </html>

@@ -2,7 +2,7 @@ package com.example.mywebsitespring.domain;
 
 import java.util.Date;
 
-public class User {
+public class UserDto {
     private String id;
     private String pwd;
     private String name;
@@ -10,10 +10,10 @@ public class User {
     private Date birth;
     private Date reg_date;
 
-    public User() {
+    public UserDto() {
     }
 
-    public User(String id, String pwd, String name, String email, Date birth, Date reg_date) {
+    public UserDto(String id, String pwd, String name, String email, Date birth, Date reg_date) {
         this.id = id;
         this.pwd = pwd;
         this.name = name;

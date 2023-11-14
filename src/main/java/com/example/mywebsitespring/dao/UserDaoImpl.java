@@ -1,6 +1,6 @@
 package com.example.mywebsitespring.dao;
 
-import com.example.mywebsitespring.domain.User;
+import com.example.mywebsitespring.domain.UserDto;
 import org.apache.ibatis.session.SqlSession;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
@@ -14,23 +14,23 @@ public class UserDaoImpl implements UserDao {
     private static String namespace = "com.example.mywebsitespring.dao.userMapper.";
 
     @Override
-    public User selectUser(String id) {
+    public UserDto selectUser(String id) {
         return session.selectOne(namespace+"select", id);
     }
 
     @Override
-    public List<User> selectAll() {
+    public List<UserDto> selectAll() {
         return session.selectList(namespace+"selectAll");
     }
 
     @Override
-    public int updateUser(User user) {
-        return session.update(namespace + "update", user);
+    public int updateUser(UserDto userDto) {
+        return session.update(namespace + "update", userDto);
     }
 
     @Override
-    public int insertUser(User user) {
-        return session.insert(namespace + "insert", user);
+    public int insertUser(UserDto userDto) {
+        return session.insert(namespace + "insert", userDto);
     }
 
     @Override

@@ -10,7 +10,7 @@
     <title>Document</title>
 </head>
 <body>
-<%@ include file="/commons/header.jspf" %>
+<%@ include file="/WEB-INF/views/commons/header.jspf" %>
 <form action="/signup" method="post">
     ID <input type="text" placeholder="id를입력해주세요." name="id"><br>
     PWD <input type="text" placeholder="pw를입력해주세요." name="pwd"><br>
@@ -22,6 +22,6 @@
         <button>돌아가기</button>
     </a>
 </form>
-<%@ include file="/commons/footer.jspf" %>
+<%@ include file="/WEB-INF/views/commons/footer.jspf" %>
 </body>
 </html>
