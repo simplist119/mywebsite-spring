@@ -11,6 +11,12 @@ public class UserDto {
     private Date reg_date;
 
     public UserDto() {
+        this.id = "zzz";
+        this.pwd = "zzz";
+        this.name = "zzz";
+        this.email = "zzz@zzz.com";
+        this.birth = new Date();
+        this.reg_date = new Date();
     }
 
     public UserDto(String id, String pwd, String name, String email, Date birth, Date reg_date) {

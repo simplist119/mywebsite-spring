@@ -19,13 +19,11 @@ public class LoginController {
 
     @GetMapping("/login")
     public String login() {
-        System.out.println("enter /login get");
         return "loginForm";
     }
 
     @PostMapping("/login")
-    public String loginSubmit(String id, String pwd, HttpServletRequest request, HttpServletResponse response) {
-        System.out.println("enter /login post");
+    public String loginSubmit(String id, String pwd, HttpServletRequest request, HttpServletResponse response) throws Exception {
         UserDto userDto = null;
         userDto = userDao.selectUser(id);
         String toURL = request.getParameter("toURL");

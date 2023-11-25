@@ -1,5 +1,6 @@
+- 제일 중요 - 서비스 구현하기, 예외처리 , 주석
 레이아웃 빨리 배우기
-
+DB CRUD 예외처리하기
 studyBoardMapper.xml의 selectPage에서 rn도 같이 반환해주고 싶은데 방법은? resulttype이 StudyBoardDto로 한정되어있는데?
 게시글 insert페이지 엔터없애기 줄바꿈하기
 viewcount 오르는거 구현하기
@@ -9,5 +10,7 @@ mysql date type varchar에서 datetime으로 바꾸기
 수정기능 실행후 mysql 자동커밋되는지 조금 기다렸다가 확인후 안되면 원장님한테 질문
 a태그 각각에 id를 지정해주던가, 아니면 a태그를 같은 클래스로 묶어서 그걸 foreach로 돌릴수 있는지? 각각${}값 검사해서 -이면 style non display처리
 ----------------------
--toURL 구현하기
--페이징
+- toURL 구현하기
+- 페이징
+- 잘못된 요청이 들어왔을 때 현재 페이지에 그대로 머무르게 하는 방법은? 없다. 다시 띄워줘야 한다.
+- 잘못된 요청이 왔을 때 parameter만 바꿔서 자기 자신을 redirect하는 건 되나? 됨

@@ -6,19 +6,19 @@ import java.util.List;
 
 public interface StudyBoardDao {
 
-    int countStudyBoard();
+    int countStudyBoard() throws Exception;
 
-    StudyBoardDto selectStudyBoard(int bno);
+    StudyBoardDto selectStudyBoard(int bno) throws Exception;
 
-    List<StudyBoardDto> selectStudyBoardPage(int number);
+    List<StudyBoardDto> selectStudyBoardPage(int number) throws Exception;
 
-    List<StudyBoardDto> selectStudyBoardAll();
+    List<StudyBoardDto> selectStudyBoardAll() throws Exception;
 
-    int insertStudyBoard(StudyBoardDto studyBoardDto);
+    int insertStudyBoard(StudyBoardDto studyBoardDto) throws Exception;
 
-    int updateStudyBoard(StudyBoardDto studyBoardDto);
+    int updateStudyBoard(StudyBoardDto studyBoardDto) throws Exception;
 
-    int deleteStudyBoard(int bno);
+    int deleteStudyBoard(int bno) throws Exception;
 
-    int deleteStudyBoardAll();
+    int deleteStudyBoardAll() throws Exception;
 }

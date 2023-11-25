@@ -21,11 +21,9 @@ public class StudyBoardDaoImplTest {
 
     @Autowired
     StudyBoardDao studyBoardDao;
-    //    TODO : 왜 DAO는 Autowired 하고 DTO는 안 하는지?
-    StudyBoardDto studyBoardDto;
 
     @Test
-    public void selectPagetest() {
+    public void selectPagetest() throws Exception {
         System.out.println("1111");
         int count = studyBoardDao.countStudyBoard();
         System.out.println("count = " + count);
@@ -36,12 +34,12 @@ public class StudyBoardDaoImplTest {
     }
 
     @Test
-    public void selectStudyBoard() {
+    public void selectStudyBoard() throws Exception {
         int bno = 0;
     }
 
     @Test
-    public void selectStudyBoardAll() {
+    public void selectStudyBoardAll() throws Exception {
         System.out.println("1111");
         List<StudyBoardDto> list = null;
         list = studyBoardDao.selectStudyBoardAll();
@@ -51,7 +49,7 @@ public class StudyBoardDaoImplTest {
 
 
     @Test
-    public void countStudyBoard() {
+    public void countStudyBoard() throws Exception {
         int i = 0;
         i = studyBoardDao.countStudyBoard();
         System.out.println(i);
@@ -59,7 +57,7 @@ public class StudyBoardDaoImplTest {
     }
 
     @Test
-    public void insertStudyBoard() {
+    public void insertStudyBoard() throws Exception {
 //        TODO : BNO 자동으로 입력하기 구현
         int result = 0;
         for (int i = 1; i <= 50; i++) {
@@ -80,11 +78,11 @@ public class StudyBoardDaoImplTest {
     }
 
     @Test
-    public void updateStudyBoard() {
+    public void updateStudyBoard() throws Exception {
     }
 
     @Test
-    public void countStudyBoardtest() {
+    public void countStudyBoardtest() throws Exception {
         int result = 0;
         result = studyBoardDao.countStudyBoard();
         System.out.println("result = " + result);
@@ -93,7 +91,7 @@ public class StudyBoardDaoImplTest {
     }
 
     @Test
-    public void deleteStudyBoardtest() {
+    public void deleteStudyBoardtest() throws Exception {
         int result = 0;
         result = studyBoardDao.deleteStudyBoard(32);
         System.out.println("result = " + result);
@@ -101,7 +99,7 @@ public class StudyBoardDaoImplTest {
     }
 
     @Test
-    public void deleteStudyBoardAlltest() {
+    public void deleteStudyBoardAlltest() throws Exception {
         int result = 0;
         result = studyBoardDao.deleteStudyBoardAll();
         assertTrue(result > 0);

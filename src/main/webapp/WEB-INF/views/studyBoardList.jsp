@@ -51,7 +51,7 @@
     <c:forEach var="board" items="${list}" varStatus="status">
         <tr>
             <td>${(currentPage-1)*10+status.count}</td>
-            <td><a href="/studyboard?bno=${board.bno}">${board.title}</a></td>
+            <td><a href="/board/study?bno=${board.bno}">${board.title}</a></td>
             <td>${board.writer}</td>
             <td>${board.view_cnt}</td>
             <td>${board.comment_cnt}</td>
@@ -62,17 +62,17 @@
     <tfoot>
     </tfoot>
 </table>
-<span><a href="studyboardlist?page=1">처음</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
-<span><a href="studyboardlist?page=${currentPage-1}">이전</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
-<span id="s1" class="sp"><a href="studyboardlist?page=${currentPage-2}">${currentPage-2}</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
-<span id="s2" class="sp"><a href="studyboardlist?page=${currentPage-1}">${currentPage-1}</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
+<span><a href="/board/study/list?page=1">처음</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
+<span><a href="/board/study/list?page=${currentPage-1}">이전</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
+<span id="s1" class="sp"><a href="/board/study/list?page=${currentPage-2}">${currentPage-2}</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
+<span id="s2" class="sp"><a href="/board/study/list?page=${currentPage-1}">${currentPage-1}</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
 <span style="background: lightslategray">&nbsp&nbsp${currentPage}&nbsp&nbsp&nbsp</span>ㅣ
-<span id="s3" class="sp"><a href="studyboardlist?page=${currentPage+1}">${currentPage+1}</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
-<span id="s4" class="sp"><a href="studyboardlist?page=${currentPage+2}">${currentPage+2}</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
-<span><a href="studyboardlist?page=${currentPage+1}">다음</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
-<span><a href="studyboardlist?page=${lastPage}">&nbsp&nbsp마지막&nbsp&nbsp</a></span>
+<span id="s3" class="sp"><a href="/board/study/list?page=${currentPage+1}">${currentPage+1}</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
+<span id="s4" class="sp"><a href="/board/study/list?page=${currentPage+2}">${currentPage+2}</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
+<span><a href="/board/study/list?page=${currentPage+1}">다음</a>&nbsp&nbspㅣ&nbsp&nbsp</span>
+<span><a href="/board/study/list?page=${lastPage}">&nbsp&nbsp마지막&nbsp&nbsp</a></span>
 
-<button type="button" ><a href="/studyboard/insertForm">글쓰기</a></button>
+<button type="button" ><a href="/board/study/insert">글쓰기</a></button>
 <br>
 <br>
 <%@ include file="/WEB-INF/views/commons/footer.jspf" %>

@@ -6,15 +6,15 @@ import java.util.List;
 
 public interface UserDao {
 
-    UserDto selectUser(String id);
+    UserDto selectUser(String id) throws Exception;
 
-    List<UserDto> selectAll();
+    List<UserDto> selectAll() throws Exception;
 
-    int updateUser(UserDto userDto);
+    int updateUser(UserDto userDto) throws Exception;
 
-    int insertUser(UserDto userDto);
+    int insertUser(UserDto userDto) throws Exception;
 
-    int deleteUser(String id);
+    int deleteUser(String id) throws Exception;
 
-    int deleteAll();
+    int deleteAll() throws Exception;
 }

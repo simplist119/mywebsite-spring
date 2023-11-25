@@ -13,13 +13,9 @@
         select * from studyboard where bno = #{bno}
     </select>
 
-<!--    <select id="selectPage" parameterType="int" resultType="StudyBoardDto">-->
-<!--        select a.* from (select @rownum := @rownum + 1 rn, s.* from studyboard s, (select @rownum :=0) a order by bno desc) a where rn<=20 and rn>=20-9-->
-<!--    </select>-->
-
     <select id="selectPage" parameterType="int" resultType="StudyBoardDto">
     <![CDATA[
-        select a.* from (select @rownum := @rownum + 1 rn, s.* from studyboard s, (select @rownum :=0) a order by bno desc) a where rn<=#{number} and rn>=#{number}-9
+        select a.* from (select @rownum := @rownum + 1 rn, s.* from studyboard s, (select @rownum :=0) b order by bno desc) a where rn>=#{number} and rn<#{number}+10
         ]]>
     </select>
 
@@ -34,7 +30,7 @@
 
     <update id="update" parameterType="StudyBoardDto">
         update studyboard
-        set title=#{title}, content=#{content}
+        set title=#{title}, content=#{content}, view_cnt=#{view_cnt}
         where bno=#{bno}
     </update>
 

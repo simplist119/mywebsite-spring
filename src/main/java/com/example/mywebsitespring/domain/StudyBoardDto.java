@@ -13,6 +13,13 @@ public class StudyBoardDto {
     private Date reg_date;
 
     public StudyBoardDto() {
+        this.bno = 0;
+        this.title = "zzz";
+        this.content = "zzz";
+        this.writer = "zzz";
+        this.view_cnt = 0;
+        this.comment_cnt = 0;
+        this.reg_date = new Date();
     }
 
     public StudyBoardDto(String title, String content, String writer, int view_cnt, int comment_cnt, Date reg_date) {

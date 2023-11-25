@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
+
 @Repository
 public class UserDaoImpl implements UserDao {
 
@@ -14,32 +15,32 @@ public class UserDaoImpl implements UserDao {
     private static String namespace = "com.example.mywebsitespring.dao.userMapper.";
 
     @Override
-    public UserDto selectUser(String id) {
-        return session.selectOne(namespace+"select", id);
+    public UserDto selectUser(String id) throws Exception {
+        return session.selectOne(namespace + "select", id);
     }
 
     @Override
-    public List<UserDto> selectAll() {
-        return session.selectList(namespace+"selectAll");
+    public List<UserDto> selectAll() throws Exception {
+        return session.selectList(namespace + "selectAll");
     }
 
     @Override
-    public int updateUser(UserDto userDto) {
+    public int updateUser(UserDto userDto) throws Exception {
         return session.update(namespace + "update", userDto);
     }
 
     @Override
-    public int insertUser(UserDto userDto) {
+    public int insertUser(UserDto userDto) throws Exception {
         return session.insert(namespace + "insert", userDto);
     }
 
     @Override
-    public int deleteUser(String id) {
+    public int deleteUser(String id) throws Exception {
         return session.delete(namespace + "delete", id);
     }
 
     @Override
-    public int deleteAll() {
+    public int deleteAll() throws Exception {
         return session.delete(namespace + "deleteAll");
     }
 }

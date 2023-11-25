@@ -57,9 +57,9 @@
     </tr>
     </tfoot>
 </table><br>
-<button><a href="/studyboard/delete?bno=${board.bno}">삭제</a></button>
-<button><a href="/studyboard/update?bno=${board.bno}">수정</a></button>
-<a href="/studyboard/delete?bno=${board.bno}"><button>삭제</button></a>
+<button><a href="/board/study/delete?bno=${board.bno}">삭제</a></button>
+<button><a href="/board/study/update?bno=${board.bno}">수정</a></button>
+<a href="/board/study/delete?bno=${board.bno}"><button>삭제</button></a>
 <%@ include file="/WEB-INF/views/commons/footer.jspf" %>
 </body>
 </html>

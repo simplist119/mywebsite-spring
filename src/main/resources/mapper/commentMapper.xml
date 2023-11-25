@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.example.mywebsitespring.dao.commentMapper">
+
+    <select id="count" parameterType="int" resultType="int">
+        select count(*) from comment where bno = #{bno}
+    </select>
+
+    <select id="select" parameterType="int" resultType="CommentDto">
+        select * from comment where cno = #{cno}
+    </select>
+
+    <select id="selectAll" parameterType="int" resultType="CommentDto">
+        select * from comment where bno = #{bno}
+    </select>
+
+    <delete id="delete" parameterType="map">
+        delete from comment where cno = #{cno} and writer = #{writer}
+    </delete>
+
+    <delete id="deleteAll" parameterType="int">
+        delete from comment where bno = #{bno}
+    </delete>
+
+    <insert id="insert" parameterType="CommentDto">
+        insert into comment (bno, pcno, content, writer)  values (#{bno}, #{pcno}, #{content}, #{writer})
+    </insert>
+    <update id="update" parameterType="CommentDto">
+        update comment set content = #{content}, up_date = #{up_date} where cno = #{cno}
+    </update>
+</mapper>

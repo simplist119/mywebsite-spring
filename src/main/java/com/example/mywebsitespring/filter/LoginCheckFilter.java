@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter({"/studyboardlist"})
+@WebFilter({"/board"})
 public class LoginCheckFilter implements Filter {
 
     public LoginCheckFilter() {
@@ -23,13 +23,14 @@ public class LoginCheckFilter implements Filter {
         HttpServletResponse response = (HttpServletResponse) servletResponse;
         HttpSession session = request.getSession(false);
 
-        String loginCheck = "false";
         System.out.println("getServletPath" + request.getServletPath());
         // 로그인이 되어 있다면
         if (session.getAttribute("id") != null) {
+            System.out.println("1");
             chain.doFilter(request, response);
         }
         // 로그인이 안 되어 있다면
+        System.out.println("2");
         response.sendRedirect("/login?toURL=" + request.getServletPath() + "?page=1");
     }
 

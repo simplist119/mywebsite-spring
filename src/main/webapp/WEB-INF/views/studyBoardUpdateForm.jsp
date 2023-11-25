@@ -33,7 +33,7 @@
 <body>
 <%@ include file="/WEB-INF/views/commons/header.jspf" %>
 <br>This is studyBoard!
-<form action="/studyboard/update" method="post">
+<form action="/board/study/update" method="post">
     <input type="hidden" name="bno" value="${board.bno}">
     <table>
         <thead>

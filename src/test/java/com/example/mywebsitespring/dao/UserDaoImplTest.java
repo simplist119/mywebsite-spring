@@ -21,7 +21,7 @@ public class UserDaoImplTest {
     UserDao userDao;
 
     @Test
-    public void selectUser() {
+    public void selectUser()  throws Exception {
         String id = "a1";
         UserDto userDto = null;
         userDto = userDao.selectUser(id);
@@ -30,7 +30,7 @@ public class UserDaoImplTest {
     }
 
     @Test
-    public void selectAll() {
+    public void selectAll()  throws Exception {
         List<UserDto> list = null;
         list = userDao.selectAll();
         System.out.println("selectAll : " + list);
@@ -38,7 +38,7 @@ public class UserDaoImplTest {
     }
 
     @Test
-    public void updateUser() {
+    public void updateUser()  throws Exception {
         UserDto user = new UserDto("aaaa", "1234", "kong", "abc@abc.com", new Date(), new Date());
         int result = userDao.updateUser(user);
 
@@ -46,9 +46,8 @@ public class UserDaoImplTest {
         assertTrue(result >= 1);
     }
 
-//    TODO : 나는 StudyboardDaoImpltest를 하는데 왜 여기서 오류가 뜰까?ㅡㅡ
     @Test
-    public void insertUser() {
+    public void insertUser()  throws Exception {
         Calendar cal = Calendar.getInstance();
         cal.clear();
         cal.set(1999, 12, 12);
@@ -60,7 +59,7 @@ public class UserDaoImplTest {
     }
 
     @Test
-    public void deleteUser() {
+    public void deleteUser()  throws Exception {
         String id = "a1";
         int result = 0;
         result = userDao.deleteUser(id);
@@ -69,7 +68,7 @@ public class UserDaoImplTest {
     }
 
     @Test
-    public void deleteAll() {
+    public void deleteAll() throws Exception  {
         int result = 0;
         result = userDao.deleteAll();
         System.out.println("result : " + result);

@@ -10,13 +10,11 @@
 <body>
 <%@ include file="/WEB-INF/views/commons/header.jspf" %>
 
-<form action="/studyboard/insert" method="post">
+<form action="/board/study/insert" method="post">
   제목  <input type="text" placeholder="제목을 입력해주세요." name="title"><br>
   내용 <input type="text" placeholder="내용을 입력해주세요." name="content" style="height: 200px;"><br>
   <input type="submit" value="등록">
-
   <br>
-
 </form>
 
 <%@ include file="/WEB-INF/views/commons/footer.jspf" %>
